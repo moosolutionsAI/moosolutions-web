@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "nanobanana-mcp": {
+      "command": "npx",
+      "args": ["-y", "@ycse/nanobanana-mcp"],
+      "env": {
+        "GOOGLE_AI_API_KEY": "${GOOGLE_AI_API_KEY}"
+      }
+    },
+    "remotion-documentation": {
+      "command": "npx",
+      "args": ["@remotion/mcp@latest"]
+    },
+    "stitch": {
+      "type": "http",
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "${STITCH_API_KEY}"
+      }
+    },
+    "blender": {
+      "command": "C:\\Users\\scott\\.local\\bin\\blender-mcp.exe",
+      "args": [],
+      "env": {
+        "BLENDER_PATH": "D:\\Apps\\Blender\\blender-4.4.0-windows-x64\\blender.exe"
+      }
+    }
+  }
+}
