@@ -17,7 +17,7 @@ export default function Projects() {
 
         <FadeIn delay={0.1}>
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium text-charcoal leading-[1.15] text-balance">
-            What we&rsquo;re building right now.
+            What I&rsquo;m working on.
           </h2>
         </FadeIn>
 

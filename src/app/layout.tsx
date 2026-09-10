@@ -24,13 +24,13 @@ const cabinet = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://moosolutions.ai"),
-  title: "MooSolutions.ai — Less Interface. More You.",
+  title: "MooSolutions.ai — Apps by one person",
   description:
-    "We build AI-powered tools that disappear into your workflow. Makers of QuietKey, the voice-to-text keyboard.",
+    "One person making apps I wish already existed. Maker of QuietKey, a keyboard you talk to.",
   openGraph: {
     title: "MooSolutions.ai",
     description:
-      "AI-powered tools that get out of the way. Less interface. More you.",
+      "One person making apps I wish already existed. Maker of QuietKey, a keyboard you talk to.",
     url: "https://moosolutions.ai",
     siteName: "MooSolutions.ai",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MooSolutions.ai",
-    description: "AI-powered tools that get out of the way. Less interface. More you.",
+    description: "One person making apps I wish already existed. Maker of QuietKey, a keyboard you talk to.",
   },
 };
 
