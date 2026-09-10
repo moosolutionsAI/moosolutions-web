@@ -12,12 +12,12 @@ export default function Projects() {
     <section id="projects" className="py-28 md:py-36 px-6 bg-cream">
       <div className="mx-auto max-w-4xl text-center">
         <FadeIn>
-          <p className="text-sm text-warmgray tracking-wide mb-8">Current projects</p>
+          <p className="text-sm text-warmgray tracking-wide mb-8">Current</p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-medium text-charcoal leading-[1.15] text-balance">
-            What I&rsquo;m working on.
+            Projects
           </h2>
         </FadeIn>
 

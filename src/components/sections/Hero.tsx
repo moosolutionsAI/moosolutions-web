@@ -37,7 +37,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-sm text-warmgray tracking-wide mb-6"
           >
-            One person, making apps
+            Independent developer
           </motion.p>
 
           <motion.h1
@@ -46,7 +46,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-heading text-5xl sm:text-6xl lg:text-7xl font-medium text-charcoal leading-[1.1] tracking-tight text-balance"
           >
-            I make apps I wish already existed.
+            Apps for Android, Windows and macOS.
           </motion.h1>
 
           <motion.p
@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-6 text-lg text-warmgray max-w-lg mx-auto leading-relaxed"
           >
-            No team, no investors. Just me, building things I use every day. Right now that&rsquo;s QuietKey, a keyboard you talk to.
+            Currently working on QuietKey, a voice-to-text keyboard.
           </motion.p>
 
           <motion.div
@@ -68,7 +68,7 @@ export default function Hero() {
               onClick={() => scrollToSection('#projects')}
               className="inline-flex items-center gap-2 text-sm font-medium bg-charcoal text-cream px-6 py-3.5 rounded-full hover:bg-charcoal-light transition-colors duration-300 cursor-pointer"
             >
-              See what I&rsquo;m making &darr;
+              Projects &darr;
             </button>
             <button
               onClick={() => scrollToSection('#contact')}
