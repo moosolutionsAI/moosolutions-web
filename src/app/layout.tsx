@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://moosolutions.ai"),
   title: "MooSolutions.ai — Less Interface. More You.",
   description:
-    "We build AI-powered tools that disappear into your workflow. Makers of QuietKey AI, the voice-to-text keyboard.",
+    "We build AI-powered tools that disappear into your workflow. Makers of QuietKey, the voice-to-text keyboard.",
   openGraph: {
     title: "MooSolutions.ai",
     description:

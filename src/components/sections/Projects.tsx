@@ -40,10 +40,10 @@ export default function Projects() {
                 className="h-44 w-44 sm:h-56 sm:w-56 rounded-[22%] shadow-[0_12px_30px_-12px_rgba(42,44,47,0.45),0_0_0_1px_rgba(42,44,47,0.06)] transition-transform duration-300 group-hover:scale-[1.04]"
               />
               <span className="font-heading text-4xl sm:text-5xl font-medium tracking-tight text-charcoal">
-                QuietKey AI
+                QuietKey
               </span>
               <span className="text-warmgray max-w-xs text-balance">
-                A voice-to-text keyboard for Android and Windows.
+                A voice-to-text keyboard for Android, Windows and macOS.
               </span>
               <span className="inline-flex items-center gap-2.5 text-base font-medium text-cream bg-charcoal px-7 py-3.5 rounded-full transition-colors duration-300 group-hover:bg-charcoal-light">
                 Open quietkey.ai
