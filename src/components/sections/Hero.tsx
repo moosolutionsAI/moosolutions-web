@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/lib/gsap'
-import QuietKeyMark from '@/components/brand/QuietKeyMark'
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -58,21 +57,41 @@ export default function Hero() {
             Makers of QuietKey AI, a voice-to-text keyboard for Android and Windows.
           </motion.p>
 
+          {/* Product card: the whole thing is the link. Mark on top, name under
+              it, then the destination spelled out so nobody has to guess. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-10 flex items-center justify-center gap-6"
+            className="mt-12 flex flex-col items-center gap-10"
           >
             <a
               href="https://quietkey.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 text-sm font-medium bg-charcoal text-cream pl-5 pr-7 py-3.5 rounded-full hover:bg-charcoal-light transition-colors duration-300"
+              aria-label="Open quietkey.ai"
+              className="group inline-flex flex-col items-center gap-6 px-12 py-10 sm:px-20 sm:py-12 rounded-[2.5rem] bg-sand border border-beige/70 transition-all duration-300 hover:bg-white hover:border-beige hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(42,44,47,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-4 focus-visible:ring-offset-cream cursor-pointer"
             >
-              <QuietKeyMark className="h-4 w-auto" />
-              Visit quietkey.ai
+              {/* The shipped app icon, drawn the way a launcher draws it, so it
+                  reads as "an app you can tap" rather than a decorative mark. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/quietkey-icon.png"
+                alt=""
+                width={512}
+                height={512}
+                draggable={false}
+                className="h-44 w-44 sm:h-56 sm:w-56 rounded-[22%] shadow-[0_12px_30px_-12px_rgba(42,44,47,0.45),0_0_0_1px_rgba(42,44,47,0.06)] transition-transform duration-300 group-hover:scale-[1.04]"
+              />
+              <span className="font-heading text-4xl sm:text-5xl font-medium tracking-tight text-charcoal">
+                QuietKey AI
+              </span>
+              <span className="inline-flex items-center gap-2.5 text-base font-medium text-cream bg-charcoal px-7 py-3.5 rounded-full transition-colors duration-300 group-hover:bg-charcoal-light">
+                Open quietkey.ai
+                <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              </span>
             </a>
+
             <button
               onClick={() =>
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
