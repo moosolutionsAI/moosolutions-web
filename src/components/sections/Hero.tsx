@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/lib/gsap'
+import QuietKeyMark from '@/components/brand/QuietKeyMark'
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -54,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-6 text-lg text-warmgray max-w-md mx-auto leading-relaxed"
           >
-            AI-powered products designed for how you actually think and work.
+            Makers of QuietKey AI, a voice-to-text keyboard for Android and Windows.
           </motion.p>
 
           <motion.div
@@ -63,21 +64,22 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-10 flex items-center justify-center gap-6"
           >
-            <button
-              onClick={() =>
-                document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' })
-              }
-              className="text-sm font-medium bg-charcoal text-cream px-7 py-3.5 rounded-full hover:bg-charcoal-light transition-colors duration-300 cursor-pointer"
+            <a
+              href="https://quietkey.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 text-sm font-medium bg-charcoal text-cream pl-5 pr-7 py-3.5 rounded-full hover:bg-charcoal-light transition-colors duration-300"
             >
-              See our work
-            </button>
+              <QuietKeyMark className="h-4 w-auto" />
+              Visit quietkey.ai
+            </a>
             <button
               onClick={() =>
-                document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
               }
               className="text-sm text-warmgray hover:text-charcoal transition-colors duration-300 cursor-pointer"
             >
-              Learn more &darr;
+              Contact &darr;
             </button>
           </motion.div>
         </div>

@@ -1,3 +1,5 @@
+import QuietKeyMark from '@/components/brand/QuietKeyMark'
+
 export default function Footer() {
   return (
     <footer className="border-t border-beige py-12 px-6 bg-cream">
@@ -9,11 +11,14 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-8">
-          <a href="#about" className="text-sm text-warmgray hover:text-charcoal transition-colors">
-            About
-          </a>
-          <a href="#portfolio" className="text-sm text-warmgray hover:text-charcoal transition-colors">
-            Work
+          <a
+            href="https://quietkey.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-warmgray hover:text-charcoal transition-colors"
+          >
+            <QuietKeyMark className="h-4 w-auto" />
+            QuietKey
           </a>
           <a href="#contact" className="text-sm text-warmgray hover:text-charcoal transition-colors">
             Contact

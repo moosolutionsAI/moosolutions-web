@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { springs } from '@/lib/springs'
+import QuietKeyMark from '@/components/brand/QuietKeyMark'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'QuietKey', href: 'https://quietkey.ai', external: true },
+  { label: 'Contact', href: '#contact', external: false },
 ]
 
 export default function Navbar() {
@@ -25,6 +25,25 @@ export default function Navbar() {
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const renderLink = (link: (typeof navLinks)[number], className: string) =>
+    link.external ? (
+      <a
+        key={link.href}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setMobileOpen(false)}
+        className={`inline-flex items-center gap-2 ${className}`}
+      >
+        <QuietKeyMark className="h-4 w-auto" />
+        {link.label}
+      </a>
+    ) : (
+      <button key={link.href} onClick={() => handleClick(link.href)} className={className}>
+        {link.label}
+      </button>
+    )
 
   return (
     <>
@@ -45,15 +64,12 @@ export default function Navbar() {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleClick(link.href)}
-                className="text-sm text-warmgray hover:text-charcoal transition-colors duration-300"
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              renderLink(
+                link,
+                'text-sm text-warmgray hover:text-charcoal transition-colors duration-300'
+              )
+            )}
           </div>
 
           {/* Mobile hamburger */}
@@ -90,17 +106,15 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-cream flex flex-col items-center justify-center gap-10"
           >
             {navLinks.map((link, i) => (
-              <motion.button
+              <motion.div
                 key={link.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ ...springs.primary, delay: i * 0.08 }}
-                onClick={() => handleClick(link.href)}
-                className="text-2xl font-heading text-charcoal"
               >
-                {link.label}
-              </motion.button>
+                {renderLink(link, 'text-2xl font-heading text-charcoal')}
+              </motion.div>
             ))}
           </motion.div>
         )}

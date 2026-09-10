@@ -26,21 +26,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://moosolutions.ai"),
   title: "MooSolutions.ai — Less Interface. More You.",
   description:
-    "We build AI-powered tools that disappear into your workflow. From voice-to-text keyboards to interactive learning platforms.",
+    "We build AI-powered tools that disappear into your workflow. Makers of QuietKey AI, the voice-to-text keyboard.",
   openGraph: {
     title: "MooSolutions.ai",
     description:
       "AI-powered tools that get out of the way. Less interface. More you.",
     url: "https://moosolutions.ai",
     siteName: "MooSolutions.ai",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "MooSolutions.ai",
     description: "AI-powered tools that get out of the way. Less interface. More you.",
-    images: ["/og-image.png"],
   },
 };
 
