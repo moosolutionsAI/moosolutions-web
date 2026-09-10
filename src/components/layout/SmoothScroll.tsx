@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
 import { gsap } from '@/lib/gsap'
 import { ScrollTrigger } from '@/lib/gsap'
+import { registerLenis } from '@/lib/scrollTo'
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
@@ -20,6 +21,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     })
 
     lenisRef.current = lenis
+    registerLenis(lenis)
 
     // Sync Lenis with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update)
@@ -27,6 +29,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     gsap.ticker.lagSmoothing(0)
 
     return () => {
+      registerLenis(null)
       lenis.destroy()
       lenisRef.current = null
     }

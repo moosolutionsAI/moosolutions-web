@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { springs } from '@/lib/springs'
 import QuietKeyMark from '@/components/brand/QuietKeyMark'
+import { scrollToSection } from '@/lib/scrollTo'
 
 const navLinks = [
+  { label: 'Projects', href: '#projects', external: false },
   { label: 'QuietKey', href: 'https://quietkey.ai', external: true },
   { label: 'Contact', href: '#contact', external: false },
 ]
@@ -22,8 +24,7 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setMobileOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(href)
   }
 
   const renderLink = (link: (typeof navLinks)[number], className: string) =>
